@@ -99,6 +99,60 @@
                     }
                 }
             }
+        },
+        "/users/{user_id}/admin": {
+            "patch": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Turn a user at admin",
+                "description": "Turn a user at admin",
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "user_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/users/{user_id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get a user",
+                "description": "Get a user data",
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "user_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
         }
     }
 }
